@@ -19,9 +19,9 @@ public class BMICalculator
 		readMeasurementData();
 	}
 	
-	public void calculateBmi()
+	public void calculateBmi()												// does the calculation for BMI
 	{
-		if(this.unitType == 1)
+		if(this.unitType == 1)												// metric calculation
 		{
 			double tot1, weight1, height1;
 			weight1 = this.weight;
@@ -29,7 +29,7 @@ public class BMICalculator
 			tot1 = (weight1 / (height1 * height1));
 			this.bmi = tot1;
 		}
-		if(this.unitType == 2)
+		if(this.unitType == 2)												// imperial calculation
 		{
 			double tot2, weight2, height2;
 			weight2 = this.weight;
@@ -53,8 +53,8 @@ public class BMICalculator
 		
 		System.out.println("Select a unit type: 1 for Metric or 2 Imperial. ");
 		s = kbd.nextInt();
-		while(s < 1 || s > 2)
-		{
+		while(s < 1 || s > 2)												// this set of code checks whether the
+		{																	// unit type input is valid
 			System.out.println("Select a valid unit type.");
 			System.out.println("Select a unit type: 1 for Metric or 2 Imperial. ");
 			s = kbd.nextInt();
@@ -62,8 +62,8 @@ public class BMICalculator
 		this.unitType = s;
 	}
 	
-	private void readMeasurementData()
-	{
+	private void readMeasurementData()										// takes unit type and sets which 
+	{																		// method should do the read and calculation
 		if(this.unitType == 1)
 		{
 			readMetricData();
@@ -80,7 +80,7 @@ public class BMICalculator
 		double met2=0;
 		System.out.println("Please enter weight in kilograms: ");
 		met1 = kbd.nextDouble();
-		if(met1<0)
+		if(met1<0)															// checks whether weight is negative
 		{
 			System.out.println("Negative weight, program closing.");
 			System.exit(0);
@@ -88,7 +88,7 @@ public class BMICalculator
 		setWeight(met1);
 		System.out.println("Please enter height in meters: ");
 		met2 = kbd.nextDouble();
-		if(met2<0)
+		if(met2<0)															// checks whether height is negative
 		{
 			System.out.println("Negative height, program closing.");
 			System.exit(0);
@@ -162,3 +162,11 @@ public class BMICalculator
 	}
 	
 }
+
+// readyUserData runs first to grab all the information
+// Unit type runs to set what to use, imperial or metric
+// then the specific unit type will collect info
+// using setters and getters
+// from there the BMI is calculated from calculateBmi()
+// as well as its category
+// before being displayed to the user.

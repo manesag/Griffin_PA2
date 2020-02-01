@@ -10,7 +10,7 @@ public class Application
 		int number;
 		int x;
 		int y = 0;
-		DecimalFormat df = new DecimalFormat("0000");
+		DecimalFormat df = new DecimalFormat("0000");					// make sure code always returns as 4 digits
 		
 		System.out.println("Press 1 to Encrypt and 2 to Decrypt: ");
 		Scanner input = new Scanner(System.in);
@@ -40,3 +40,8 @@ public class Application
 
 	}
 }
+
+// Application stars by asking the user
+// what they would like, encryption or Decryption.
+// From there it goes into the switch to break out
+// into what the user wants.

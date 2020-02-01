@@ -30,3 +30,13 @@ public class Encrypter
 		return (int)ret;
 	}
 }
+
+// For encryption, the number is modded
+// by 10 to get the trailing number and 
+// place it into an array.
+// From there the encryption is done:
+// adding 7 and taking the remainder
+// after dividing by 10. 
+// From there the array is scrambled,
+// before placing it back into an integer 
+// that is returned.

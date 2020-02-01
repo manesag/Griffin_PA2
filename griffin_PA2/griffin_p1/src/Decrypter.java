@@ -30,3 +30,11 @@ public class Decrypter
 		return (int)decrypt;
 	}
 }
+
+// To decrypt the number, we separate it
+// into its individual pieces into an array
+// like the encryption. 
+// From there the numbers are unsorted
+// before adding 13 and taking the remainder
+// from dividing by 10. The numbers are then
+// placed back into an int before returning.
